@@ -1,0 +1,30 @@
+<table border = "1">
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+  </tr>
+  <tr>
+    <td><%= @employee.name %></td>
+    <td><%= @employee.email %></td>
+  </tr>
+</table>
+
+<table border = "1">
+  <tr>
+    <th>Sale Amount</th>
+    <th>Units Sold</th>
+    <th>Sale Date</th>
+    <th>Invoice No</th>
+
+
+  </tr>
+  <% @employee.sales.order(sale_amount: :desc).each do |sale| %>
+  <tr>
+    <td>$<%=sale.sale_amount%></td>
+    <td><%=sale.units_sold%></td>
+    <td><%= sale.sale_date %></td>
+    <td><%=sale.invoice_no%></td>
+  </tr>
+  <% end %>
+
+</table>
