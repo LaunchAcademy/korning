@@ -1,0 +1,11 @@
+<% @employees.find_each do |employee| %>
+<ul>
+  <li>
+    Name: <%= link_to "#{employee.name}", employee %>
+  </li>
+
+  <li>
+    Email: <%= mail_to "#{employee.email}" %>
+  </li>
+</ul>
+<% end %>

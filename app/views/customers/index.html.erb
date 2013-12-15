@@ -1,0 +1,19 @@
+<% @sales.find_each do |sale| %>
+<ul>
+  <li>
+    Customer: <%= link_to "#{sale.customer.name}", "http://www.#{sale.customer.name}.com/" %> 
+  </li>
+
+  <li>
+    Account: <%= "#{sale.customer.account}" %>
+  </li>
+
+  <li>
+    Invoice: <%= "#{sale.invoice_no}" %>
+  </li>
+
+  <li>
+    Frequency: <%= "#{sale.frequency.frequency}" %>
+  </li>
+</ul>
+<% end %>

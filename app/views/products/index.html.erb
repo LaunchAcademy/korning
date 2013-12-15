@@ -1,0 +1,16 @@
+<table border="1">
+  <th>Date</th>
+  <th>Amount</th>
+  <th>Invoice No</th>
+  <th>Units Sold</th>
+  <th>Price Per Unit</th>
+  <% @sales.each do |sale| %>
+  <tr>
+    <td><%= sale.sale_date %></td>
+    <td>$<%= sale.sale_amount %></td>
+    <td><%= sale.invoice_no %></td>
+    <td><%= sale.units_sold %></td>
+    <td>$<%= (sale.sale_amount/sale.units_sold).round(2) %></td>
+  </tr>
+  <% end %>
+</table>
